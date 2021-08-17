@@ -95,19 +95,20 @@ drawCardsId(dynamicRandomId(10, 67, 10));
 //логика для get по чекбоксу
 function sortPerson(event) {
   if (event.target) {
+    let value = event.target.textContent.toLowerCase();
     if (event.target.textContent === "Male") {
       clearField();
-      drawCards(getPersons(`?gender=${event.target.textContent}`));
+      drawCards(getPersons(`?gender=${value}`));
     } else if (event.target.textContent === "Female") {
       clearField();
-      drawCards(getPersons(`?gender=${event.target.textContent}`));
+      drawCards(getPersons(`?gender=${value}`));
     }
     if (event.target.textContent === "Alive") {
       clearField();
-      drawCards(getPersons(`?status=${event.target.textContent}`));
+      drawCards(getPersons(`?status=${value}`));
     } else if (event.target.textContent === "Dead") {
       clearField();
-      drawCards(getPersons(`?status=${event.target.textContent}`));
+      drawCards(getPersons(`?status=${value}`));
     }
   }
 }
